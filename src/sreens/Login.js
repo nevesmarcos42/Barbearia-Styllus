@@ -20,7 +20,7 @@ export default function Login({navigation}) {
                 setEmail(" ");
                 setSenha(" ");
               } else if (email == null && senha == null) {
-                Alert.alert('Os dados estão vazios.r', 'Favor informa-los!', [
+                Alert.alert('Não foram informados os dados para o acesso...', 'Favor informa-los!', [
                   {
                     text: 'Ok'
                   }
@@ -40,7 +40,7 @@ export default function Login({navigation}) {
 
         <Logo/>
 
-        <StatusBar style='auto'/>
+        <StatusBar style='light'/>
 
         <TextInput style={styles.input}
             placeholder='Email'
@@ -67,7 +67,7 @@ export default function Login({navigation}) {
 //Configuração dos elemento em tela
 const styles = StyleSheet.create({
     conatiner: {
-        flex: 0.9,
+        flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center'

@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, View, Text, Alert } from 'react-native';
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
@@ -46,6 +46,12 @@ export default function Registros({navigation}){
             deleteDoc(doc(db, "Trabalhos", element));
             totalDia = 0;
             totalSemana = 0;
+            setServico("");
+            Alert.alert('Os dados nao foram apagados', 'com sucesso!', [
+                {
+                  text: 'OK'
+                },
+            ]);
         });
     }
 
@@ -60,7 +66,7 @@ export default function Registros({navigation}){
 
             <Logo/>
 
-            <StatusBar style='auto'/>
+            <StatusBar style='light'/>
 
             <Text style={styles.trab}>-Total dos trabalhos realizados-</Text>
             
@@ -105,7 +111,7 @@ export default function Registros({navigation}){
 //Configuração dos elemento em tela
 const styles = StyleSheet.create({
     container:{
-        flex: 0.9,
+        flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center'

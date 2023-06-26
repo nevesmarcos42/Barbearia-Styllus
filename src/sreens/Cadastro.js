@@ -15,22 +15,31 @@ export default function Registrar({navigation}) {
   //Evia os dados informados no formulario para a base de dados
   //E checa os dados informados se estão fazios ou imcorretos
   const enviar = async () => {
-    try{
-      const docRef = await addDoc(collection(db, "Trabalhos"), { //Adiciona dados a base de dados
+    if( trabalho == '' && valor == '' ){
+      Alert.alert('Os dados nao foram informados.', 'Informe!', [
+        {
+          text: 'OK'
+        },
+      ]);
+      return '';
+    } else {
+      try{
+        const docRef = await addDoc(collection(db, "Trabalhos"), { //Adiciona dados a base de dados
         servico: trabalho,
         valor: valor,
         date: new Date().getDate() //Data Atual
       });
-      Alert.alert('Dados Enviado...', 'Dados Registrados!', [
-        {
-          text: 'OK'
-          
-        },
-      ]);
-    setTrabalho("");
-    setvalor("")
-    } catch (e) {
-      console.error("error adding document: ", e);
+        Alert.alert('Dados Enviado...', 'Dados Registrados!', [
+          {
+            text: 'OK'
+            
+          },
+        ]);
+        setTrabalho("");
+        setvalor("")
+      } catch (e) {
+        console.error("error adding document: ", e);
+      }
     }
   }
 
@@ -39,7 +48,7 @@ export default function Registrar({navigation}) {
 
       <Logo/>
 
-      <StatusBar style='auto'/>
+      <StatusBar style='light'/>
 
       <Text style={styles.text}>Trabalho Realizado:</Text>
       <TextInput style={styles.input}
@@ -72,7 +81,7 @@ export default function Registrar({navigation}) {
 //Configuração dos elemento em tela
 const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
+    flex: 1,
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',

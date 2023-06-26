@@ -14,7 +14,7 @@ export default function Menu({navigation}) {
 
       <Logo/>
 
-      <StatusBar style='auto'/>
+      <StatusBar style='light'/>
 
       <View style={styles.botoes}>
 
@@ -37,7 +37,7 @@ export default function Menu({navigation}) {
 //Configuração dos elemento em tela
 const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
+    flex: 1,
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center'
