@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React, {useState} from 'react'
-import  { collection, getDocs } from 'firebase/firestore';
+import  { collection, getDocs } from 'firebase/firestore/lite';
 import { StatusBar } from 'expo-status-bar';
 //Importa os components
 import Logo from '../components/Logo';

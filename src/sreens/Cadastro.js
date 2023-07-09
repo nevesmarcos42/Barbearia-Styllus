@@ -1,6 +1,6 @@
 import { StyleSheet, TextInput, View, TouchableOpacity, Text, Alert } from 'react-native';
 import React, {useState} from 'react';
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore/lite'
 import { StatusBar } from 'expo-status-bar';
 //importa os icons
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ export default function Registrar({navigation}) {
   //Cria estados para a aplicação
   const [trabalho, setTrabalho] = useState("");
   const [valor, setvalor] = useState("");
-  //Evia os dados informados no formulario para a base de dados
+  //Envia os dados informados no formulario para a base de dados
   //E checa os dados informados se estão fazios ou imcorretos
   const enviar = async () => {
     if( trabalho == '' && valor == '' ){

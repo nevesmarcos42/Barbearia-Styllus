@@ -1,5 +1,5 @@
 import { FlatList, SafeAreaView, StyleSheet, TouchableOpacity, View, Text, Alert } from 'react-native';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { doc, deleteDoc } from "firebase/firestore";
